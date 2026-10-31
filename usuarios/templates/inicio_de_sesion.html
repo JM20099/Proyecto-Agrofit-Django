@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="text/css" href="{% static 'asseds/fonts/poppins/poppins.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-free-6.1.2-web/css/all.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+    
+    
+   
+    <title>Agrofit</title>
+</head>
+<body>
+    <div class="layout">
+
+        <div class="layout__aside"> 
+        <section class="inicio_principal">
+            <div class="inicio_image-principal">
+                <img class="inicio_image" src="{% static 'images/logo_gym.png' %}" />
+            </div>
+        </section>
+        </div>
+
+
+        <main class="layout__content">
+        <section class="iniciar_sesion">
+            <div class="sesion_text">
+                <h1 class="sesion_titulo">Iniciar Sesion</h1>
+            </div>
+            <div>
+                <p class="sesion_parrafo">Ingresa con tu cuenta institucional SENA</p>
+            </div>
+        
+
+        
+             <div class="link__container">
+                 <section class="link__left">
+
+
+             <form action="home.html">       
+
+             <div class="link__group">
+                <input type="email" class="link__input" name="name" required placeholder=" "/>    <!-- crear campos interactivos dentro de un formulario-->     <!--required obliga al usuario a llenar el campo y placeholder muestra un texto dentro de la tabla vacia-->
+                <label for="name" class="form__label">Correo SENA</label> 
+             <div class="link_icon-icon">
+                    <i class="link_icon fa solid fa-at"></i>
+             </div>
+             </div>
+
+             <div class="link__group">
+                <input type="password" class="link__input" name="name" required placeholder=" "/>    <!-- crear campos interactivos dentro de un formulario-->     <!--required obliga al usuario a llenar el campo y placeholder muestra un texto dentro de la tabla vacia-->
+                <label for="name" class="form__label">Contraseña</label>
+                
+                <div class="link_icon-icon">
+                    <i class="link_icon fa solid fa-lock"></i>
+                </div>
+             </div>
+
+            <div class="link_link">
+                <a href="recuperar_contraseña-1.html" class="link_contraseña">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            
+                
+                <button type="submit" class="form__button">Iniciar Sesion</button>
+                <div class="form_icon-button">
+                    <i class="icon_button fa solid fa-arrow-right"></i>
+                </div>
+
+                </form>
+
+                <div class="registro_info">
+                    <p class="registro_title">¿No tienes una cuenta?</p>
+                </div>
+
+                <div class="registro_link-button">
+                    <a class="registro_link" href="{% url 'registro' %}">Registrarse</a>
+                </div>
+            </div>
+            </section>             
+             </div>        
+         </section>
+        </main>
+    </div> 
+</body>
+</html>

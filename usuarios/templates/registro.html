@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="text/css" href="{% static 'asseds/fonts/poppins/poppins.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-free-6.1.2-web/css/all.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+  <script src="asseds/js/registro.js" defer></script>
+  <title>Agrofit</title>
+</head>
+
+<body class="registro__body">
+
+  <div class="registro__layout">
+    <section class="registro__text">
+      <div class="codigo_title-contenedor-4">
+        <h1 class="codigo_title-4">Registro de Usuario</h1>
+      </div>
+
+      <div class="codigo-text_parrafo-4">
+        <p class="codigo_parrafo-4">Completa con tus datos para ingresar al sistema agrofit</p>
+      </div>
+    </section>
+
+    
+    <section class="registro__content">
+      <form action="home.html">
+        
+      <div class="registro_inicio-nombre">
+      <div class="registro__group">
+        <input type="text" class="registro__input" name="name" required placeholder=" " />    
+        <label for="name" class="registro__label">Nombres</label>
+      </div>
+
+      <div class="registro__group">
+        <input type="text" class="registro__input" name="name" required placeholder=" " />
+        <label for="name" class="registro__label">Apellidos</label>
+      </div>
+
+      <div class="registro__group">
+        <input type="text" class="registro__input" name="name" required placeholder=" " />
+        <label for="name" class="registro__label">Telefono</label>
+      </div>
+
+      </div>
+
+
+      <div class="form-group">
+    <select class="registro__select">
+        <option class="editar__option" value="" disabled selected>Tipo de Documento</option>
+        <option value="intermedio">Cedula de Ciudadania</option>
+        <option value="principiante">Tarjeta de Identidad</option>
+        <option value="avanzado">Cedula de Extranjeria</option>
+    </select>
+</div>
+      
+
+      <div class="registro__group">
+        <input type="text" class="registro__input" name="name" required placeholder=" " />
+        <label for="name" class="registro__label">Documento de Identidad</label>
+      </div>
+
+      <div class="registro__group">
+        <input type="text" class="registro__input" name="name" required placeholder=" " />
+        <label for="name" class="registro__label">Correo Electronico, Sena o Soysena</label>
+      </div>
+
+      <div class="form__registro-info">
+        <div class="form-group">
+            <label class="fecha-title">FECHA DE NACIMIENTO</label>
+            <input type="date" class="botton-fecha" />
+        </div>
+       </div>
+
+
+       <div class="registro_inicio-medidas">
+            <div class="form_group-info">
+                <input type="text" class="registro__input" placeholder=" " />
+                <label class="registro__label">Peso Kg</label>
+            </div>
+
+            <div class="form_group-info">
+                <input type="text" class="registro__input" placeholder=" " />
+                <label class="registro__label">Altura Cm</label>
+
+           
+            </div>
+        </div>
+
+         <div class="form_group-info">
+                <input type="text" class="registro__input" placeholder=" " />
+                <label class="registro__label">Grasa Corporal</label>
+            </div>
+      
+
+
+      <div class="form-group">
+        <label class="label-title">TIPO DE USUARIO</label>
+        <div class="roles-container">
+          <button type="button" class="registro__botton role-btn">Entrenador</button>
+          <button type="button" class="registro__botton role-btn">Funcionario</button>
+          <button type="button" class="registro__aprendiz role-btn">Aprendiz</button>
+        </div>
+      </div>
+
+      <div id="seccionFicha" class="registro__group" style="display: none;">
+        <input type="email" class="registro__input" name="name" required placeholder=" " />
+        <!-- crear campos interactivos dentro de un formulario-->
+        <!--required obliga al usuario a llenar el campo y placeholder muestra un texto dentro de la tabla vacia-->
+        <label for="name" class="registro__label">Numero de Ficha</label>
+      </div>
+
+      
+
+      <div class="form-group" id="grupoTipoContrato">
+        <label class="label-title" for="tipoContrato">TIPO DE CONTRATO</label>
+        <div>
+           <label class="grupoTipoContrato">
+           <input class="registro_contrato-botton" type="radio" name="tipoContrato" value="planta" checked onchange="toggleCamposContrato()"> Planta
+           </label>
+           <label class="grupoTipoContrato">
+           <input class="registro_contrato-botton" type="radio" name="tipoContrato" value="contrato" onchange="toggleCamposContrato()"> Contrato 
+           </label>
+      </div>
+      </div>
+
+      <!-- Sección condicional (oculta por defecto) -->
+      <div id="seccionContrato" class="registro__contrato">
+        <div class="contrato__fecha">
+
+          <div class="form-group">
+            <label class="label-title">FECHA DE INICIO</label>
+            <input type="date" class="registro__botton-fecha" />
+          </div>
+
+          <div class="form-group">
+            <label class="label-title">FECHA DE FIN</label>
+            <input type="date" class="registro__botton-fecha" />
+          </div>
+        </div>
+
+        <div class="registro__group">
+          <input type="text" class="registro__input" placeholder=" " />
+          <label class="registro__label">Numero de Contrato</label>
+        </div>
+      </div>
+
+
+
+      
+
+
+      <div class="registro__group" id="seccionCentrodeFormacion">
+        <input type="text" class="registro__input" name="name" required placeholder=" " />
+        <label for="name" class="registro__label">Centro de Formacion</label>
+      </div>
+
+
+      <div class="registro__group" id="seccionDependencia">
+        <input type="text" class="registro__input" name="name" required placeholder=" " />
+        <label for="name" class="registro__label">Dependencia</label>
+      </div>
+
+
+
+      <div class="registro__group" id="seccionPassword">
+        <input type="password" class="registro__input" name="name" required placeholder=" " />
+        <label for="name" class="registro__label">contraseña</label>
+      </div>
+
+      <button type="submit" class="form__button">Registrar Usuario</button>
+      <div class="form_icon-button">
+        <i class="icon_button fa solid fa-user-plus"></i>
+      </div>
+      </form>
+    </section>
+  </div>
+</body>
+
+</html>
