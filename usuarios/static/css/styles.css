@@ -623,6 +623,31 @@ body {
   margin-bottom: 1rem;
 }
 
+.centro__input {
+  position: relative;
+  width: 100%;
+  height: 2.8rem;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+  outline: none;
+  background-color: var(--color-transparent);
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.centro__input:focus~.registro__label,
+.centro__input:not(:placeholder-shown)~label {
+  top: -0.6rem;
+  left: 0.6rem;
+  font-size: 0.75rem;
+  background-color: var(--color-bg-card);
+  padding: 0 0.3rem;
+}
+
 .registro__label {
   position: absolute;
   top: 0.7rem;
@@ -684,6 +709,7 @@ body {
 .label-title {
   font-size: 1.4rem;
   color: rgb(95, 92, 92);
+  margin-bottom: 9rem;
 }
 
 .fecha-title {
@@ -755,6 +781,23 @@ body {
   width: 100%;
 }
 
+.role-radio input { 
+  display: none; 
+  margin-bottom: 9rem;
+}
+
+.role-radio input:checked + span { 
+  background: #39a900; color: #fff; 
+  
+}
+
+.roles-container{
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
 .registro_inicio-nombre .registro__group,
 .form__registro-info .form_group-info {
   flex: 1;
@@ -768,6 +811,7 @@ body {
 
 .grupoTipoContrato {
   font-size: 1.1rem;
+  margin-bottom: 9rem;
 }
 
 
