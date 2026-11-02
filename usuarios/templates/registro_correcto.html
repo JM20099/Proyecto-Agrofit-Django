@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'asseds/fonts/poppins/poppins.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-free-6.1.2-web/css/all.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+    <title>Agrofit</title>
+</head>
+
+<body>
+    <div class="codigo_layout">
+
+        <div class="codigo_text-4">
+            <section class="codigo_content-4">
+                <div>
+                    <i class="contraseña_icon-4 fa solid fa-circle-check"></i>
+                </div>
+                <div class="codigo_title-contenedor-4">
+                    <h1 class="codigo_title-4">¡Te has registrado correctamente!</h1>
+                </div>
+
+                <div class="codigo-text_parrafo-4">
+                    <p class="codigo_parrafo-4">Bienvenido a Agrofit</p>
+
+   
+                </div>
+
+
+                <input type="button" class="codigo__button-4" value="Volver al inicio"
+                    onclick="window.location.href='{% url 'inicio' %}';">
+                <div class="codigo_icon-button-4">
+                    <i class="icon_button-4 fa solid fa-chevron-right"></i>
+                </div>
+            </section>
+        </div>
+</body>
+
+</html>

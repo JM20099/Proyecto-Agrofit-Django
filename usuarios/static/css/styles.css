@@ -563,8 +563,8 @@ body {
 .codigo_icon-button-4 {
   position: relative;
   text-align: right;
-  margin-top: -3rem;
-  margin-right: 12.5rem;
+  margin-top: -2.9rem;
+  margin-right: 11.5rem;
   /* Distancia desde el borde derecho */
   margin-bottom: 1.2rem;
   pointer-events: none;
@@ -818,6 +818,8 @@ body {
 .editar__option{
   color: var(--color-primary);
 }
+
+
 /*Home*/
 .layout__inicio {
   position: relative;
@@ -2459,7 +2461,14 @@ body {
   margin-bottom: 1rem;
 }
 
-
+.registro__select-centro {
+  width: 100%;
+  font-size: 1rem;
+  padding: 9px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 1rem;
+  margin-top: 0.7rem;
+}
 
 
 

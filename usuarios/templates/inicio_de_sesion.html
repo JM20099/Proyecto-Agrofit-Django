@@ -40,24 +40,24 @@
                  <section class="link__left">
 
 
-             <form action="home.html">       
+             <form method="post">
+                {% csrf_token %}       
 
-             <div class="link__group">
-                <input type="email" class="link__input" name="name" required placeholder=" "/>    <!-- crear campos interactivos dentro de un formulario-->     <!--required obliga al usuario a llenar el campo y placeholder muestra un texto dentro de la tabla vacia-->
-                <label for="name" class="form__label">Correo SENA</label> 
-             <div class="link_icon-icon">
+            <div class="link__group">
+                <input type="email" class="link__input" name="correo" id="correo" required placeholder=" "/>
+                <label for="correo" class="form__label">Correo SENA</label>
+                <div class="link_icon-icon">
                     <i class="link_icon fa solid fa-at"></i>
-             </div>
-             </div>
+                </div>
+            </div>
 
-             <div class="link__group">
-                <input type="password" class="link__input" name="name" required placeholder=" "/>    <!-- crear campos interactivos dentro de un formulario-->     <!--required obliga al usuario a llenar el campo y placeholder muestra un texto dentro de la tabla vacia-->
-                <label for="name" class="form__label">Contraseña</label>
-                
+            <div class="link__group">
+                <input type="password" class="link__input" name="password" id="password" required placeholder=" "/>
+                <label for="password" class="form__label">Contraseña</label>
                 <div class="link_icon-icon">
                     <i class="link_icon fa solid fa-lock"></i>
                 </div>
-             </div>
+            </div>
 
             <div class="link_link">
                 <a href="recuperar_contraseña-1.html" class="link_contraseña">¿Olvidaste tu contraseña?</a>

@@ -162,10 +162,7 @@ class CentroFormacionAdmin(admin.ModelAdmin):
 
 
 class DependenciaAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "centro")
-    search_fields = ("nombre", "centro__nombre")
-    list_filter = ("centro",)
-
+    list_display = ("nombre",)
 
 # ---------------------------------------------------------------------------
 # Formación académica

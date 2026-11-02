@@ -126,12 +126,9 @@ class CentroFormacion(models.Model):
  
 class Dependencia(models.Model):
     nombre = models.CharField(max_length=100)
-    centro = models.ForeignKey(
-        CentroFormacion, on_delete=models.CASCADE, related_name="dependencias"
-    )
- 
+
     def __str__(self):
-        return f"{self.nombre} ({self.centro})"
+        return self.nombre
  
  
 # ---------------------------------------------------------------------------

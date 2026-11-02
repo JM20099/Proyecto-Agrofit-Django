@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'asseds/fonts/poppins/poppins.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-free-6.1.2-web/css/all.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+    <title>Agrofit</title>
+</head>
+
+<body>
+    <div class="layout__inicio">
+        <aside class="home__aside">
+            <section class="home__container">
+                <nav class="layout__menu"> <!--menu de navegacion--> <!--nav sirve para colocar enlaces de navegacion-->
+                    <div class="home__icon-text">
+                        <img class="home__img" src="{% static 'images/logo_gym.png' %}" alt="Logo" />
+                    </div>
+                        
+                    <input type="checkbox" id="menu-toggle" class="menu__checkbox">
+                <label for="menu-toggle" class="menu__btn">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                    
+                
+                    <ul class="menu__list"> <!--tabla informal-->
+                        <li class="menu__option  "> <!--datos de la tabla-->
+                            <a href="{% url 'home' %}" class="menu_link menu__link--active"> <!--crea conexiones-->
+                                <i class="menu__icon fa-solid fa-house"></i> <!--mostrar iconos-->
+                                <span class="menu__overlay">Inicio</span> <!--coloca texto al lado del icono-->
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="usuarios.html" class="menu_link">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Usuarios</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="rutinas.html" class="menu_link">
+                                <i class="menu__icon fa-solid fa-dumbbell fa-rotate-by" style="--fa-rotate-angle: -45deg;"></i>
+                                <span class="menu__overlay">Rutinas</span>
+                            </a>
+                        </li>
+                        <li class="menu__option-cerrar">
+                             <a href="{% url 'cerrar_sesion' %}" class="menu_link menu__link--active">
+                                <i class="menu__icon fa-solid fa-right-from-bracket"></i>
+                                <span class="menu__overlay">Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+            </section>
+        </aside>
+
+
+        <main class="home__content">
+
+            
+            <section class="home__inicio">
+                <h1 class="home__titulo">PANEL DE INSTRUCTOR</h1>
+                <h2 class="home__subtitulo">Resumen de Actividad</h2>
+                <h2 class="home__subtitulo">Bienvenido {{ user.nombre }} {{ user.apellidos }}</h2>
+            </section>
+
+<!--
+            <section class="home__principal">
+            <section class="home__cajas">
+            <div class="home__caja1">
+                <h3 class="home__usuarios-registrados">Usuarios Registrados</h3>
+                <i class="home__icon-1 fa-solid fa-user-group"></i>
+            </div>
+            
+            <div class="home__numero-caja1">
+                <h2 class="home__numero-numero">142</h2>
+            </div>
+        </section>
+
+
+        <section class="home__cajas">
+            <div class="home__caja1">
+                <h3 class="home__usuarios-registrados">Rutinas Subidas</h3>
+                <i class="home__icon-1 fa-solid fa-dumbbell fa-rotate-by" style="--fa-rotate-angle: -45deg;"></i>
+            </div>
+            
+            <div class="home__numero-caja1">
+                <h2 class="home__numero-numero">28</h2>
+            </div>
+        </section>
+
+
+        <section class="home__cajas">
+            <div class="home__caja1">
+                <h3 class="home__usuarios-registrados">Usuarios sin Rutina</h3>
+                <i class="home__icon-1 fa-solid fa-user-group"></i>
+            </div>
+            
+            <div class="home__numero-caja1">
+                <h2 class="home__numero-numero">2</h2>
+            </div>
+        </section>
+        </section>
+        
+        <section class="home__actividad">
+        <div class="actividad__header">
+    <h2 class="actividad__titulo">Actividad Reciente</h2>
+  </div>
+  
+  <div class="actividad__lista">
+    <div class="actividad__tarjeta">
+      <div class="actividad__info-usuario">
+        <div class="actividad__avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="actividad__detalles">
+          <h3 class="actividad__nombre">Carlos Mendoza</h3>
+          <p class="actividad__estado estado--completado">
+            Rutina completada
+            </p>
+            <i class="icon__cajas-home fa-solid fa-check-double"></i> 
+        </div>
+      </div>
+      <span class="actividad__tiempo">Hace 10 min</span>
+    </div>
+
+
+   
+    <div class="actividad__tarjeta">
+      <div class="actividad__info-usuario">
+        <div class="actividad__avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="actividad__detalles">
+          <h3 class="actividad__nombre">Andres Muñoz</h3>
+          <p class="actividad__estado estado--completado">
+            Semana de adaptacion completada
+            </p>
+            <i class="icon__cajas-home fa-solid fa-check-double"></i> 
+        </div>
+      </div>
+      <span class="actividad__tiempo">Hace 10 min</span>
+    </div>
+
+
+    
+    <div class="actividad__tarjeta">
+      <div class="actividad__info-usuario">
+        <div class="actividad__avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="actividad__detalles">
+          <h3 class="actividad__nombre">Ana Maria</h3>
+          <p class="actividad__estado estado--completado">
+            Semana de adaptacion completada
+            </p>
+            <i class="icon__cajas-home fa-solid fa-check-double"></i> 
+        </div>
+      </div>
+      <span class="actividad__tiempo">Hace 10 min</span>
+    </div>
+
+
+    
+    <div class="actividad__tarjeta">
+      <div class="actividad__info-usuario">
+        <div class="actividad__avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="actividad__detalles">
+          <h3 class="actividad__nombre">Sofia Rojas</h3>
+          <p class="actividad__estado estado--completado">
+            Rutina completada
+            </p>
+            <i class="icon__cajas-home fa-solid fa-check-double"></i> 
+        </div>
+      </div>
+      <span class="actividad__tiempo">Hace 10 min</span>
+    </div>
+
+  </div>
+  </section>
+-->
+        </main>
+
+        
+    </div>
+</body>
+
+</html>

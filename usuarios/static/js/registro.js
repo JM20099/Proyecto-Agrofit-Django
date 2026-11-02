@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const seccionDependencia = document.getElementById('seccionDependencia');
   const seccionPassword = document.getElementById('seccionPassword');
   const seccionCentrodeFormacion = document.getElementById('seccionCentrodeFormacion');
+  const seccionEspecialidad = document.getElementById('seccionEspecialidad');
 
   // Los radios de Planta / Contrato avisan solos al cambiar (ya no dependen del onchange del HTML)
   document.querySelectorAll('input[name="tipoContrato"]').forEach(radio => {
@@ -41,6 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
       boton.style.backgroundColor = 'rgb(210, 241, 210)';
 
       const textoRol = boton.textContent.trim().toLowerCase();
+
+      // La especialidad solo se muestra para Entrenador
+      if (seccionEspecialidad) {
+        seccionEspecialidad.style.display = textoRol === 'entrenador' ? 'block' : 'none';
+      }
 
       if (textoRol === 'aprendiz') {
         if (grupoTipoContrato) grupoTipoContrato.style.display = 'none';
